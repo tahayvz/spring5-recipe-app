@@ -135,6 +135,7 @@ public class Recipe {
         this.difficulty = difficulty;
     }
 
+
     public Set<Category> getCategories() {
         return categories;
     }
