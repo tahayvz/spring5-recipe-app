@@ -1,7 +1,5 @@
 package com.springframework.domain;
 
-import org.springframework.context.annotation.EnableMBeanExport;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -20,8 +18,7 @@ public class Recipe {
     private String url;
     private String directions;
 
-
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients;
 
     @Lob
@@ -124,7 +121,7 @@ public class Recipe {
     }
 
     public void setIngredients(Set<Ingredient> ingredients) {
-        this.ingredients=ingredients;
+        this.ingredients = ingredients;
     }
 
     public Difficulty getDifficulty() {
@@ -134,7 +131,6 @@ public class Recipe {
     public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
     }
-
 
     public Set<Category> getCategories() {
         return categories;
