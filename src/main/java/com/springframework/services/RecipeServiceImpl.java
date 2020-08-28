@@ -13,7 +13,6 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-
 @Slf4j
 @Service
 public class RecipeServiceImpl implements RecipeService {
@@ -69,5 +68,4 @@ public class RecipeServiceImpl implements RecipeService {
     public void deleteById(Long idToDelete) {
         recipeRepository.deleteById(idToDelete);
     }
-
 }
